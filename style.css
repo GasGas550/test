@@ -1,0 +1,236 @@
+/* Основные стили */
+:root {
+    --primary-color: #f39c12; /* Наш фирменный оранжевый */
+    --dark-color: #2c3e50;    /* Темно-серый для текста */
+    --light-color: #ffffff;   /* Белый фон */
+    --grey-bg: #f9f9f9;       /* Слегка серый фон для секций */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background-color: var(--light-color);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+.header .logo img {
+    height: 105px;
+    margin-right: 15px;
+}
+.header .logo h1 {
+    margin: 0;
+    font-size: 28px;
+    color: var(--dark-color);
+}
+
+/* Секции */
+section {
+    padding: 60px 0;
+}
+section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.about {
+    background-color: var(--grey-bg);
+    text-align: center;
+}
+.about p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Сетка услуг */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    background: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Изображение будет красиво обрезаться */
+}
+.service-card h3 {
+    font-size: 22px;
+    margin: 20px 0 10px 0;
+    color: var(--primary-color);
+}
+.service-card p {
+    padding: 0 20px 20px 20px;
+    font-size: 15px;
+}
+
+/* Форма заявки */
+.order-form-section {
+    background-color: var(--grey-bg);
+}
+#order-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #e67e22; /* Более темный оранжевый при наведении */
+}
+#status {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 40px 0;
+}
+.footer h2 {
+    color: var(--primary-color);
+}
+.footer p {
+    margin: 5px 0;
+}
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+/* ========================================= */
+/* АДАПТИВНЫЕ СТИЛИ (MEDIA QUERIES)         */
+/* ========================================= */
+
+/* Стили для планшетов и мобильных телефонов (экраны меньше 768px) */
+@media (max-width: 768px) {
+
+    /* Уменьшаем боковые отступы в контейнере для экономии места */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Уменьшаем вертикальные отступы в секциях */
+    section {
+        padding: 40px 0;
+    }
+
+    /* Уменьшаем размер главных заголовков секций */
+    section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* --- Шапка (Header) --- */
+    .header .logo {
+        /* Располагаем логотип и название по центру */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .logo img {
+        margin-right: 0;
+        margin-bottom: 10px; /* Добавляем отступ снизу от лого */
+    }
+
+    /* --- Секция "О нас" --- */
+    .about p {
+        font-size: 16px; /* Немного уменьшаем текст */
+    }
+
+    /* --- Сетка услуг --- */
+    .services-grid {
+        /* Карточки теперь будут идти друг под другом */
+        grid-template-columns: 1fr;
+        gap: 20px; /* Уменьшаем отступ между карточками */
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    /* --- Форма заявки --- */
+    #order-form {
+        padding: 20px; /* Уменьшаем внутренние отступы формы */
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов (меньше 480px) */
+@media (max-width: 480px) {
+
+    body {
+        /* Делаем основной текст чуть меньше для лучшей читаемости */
+        font-size: 15px;
+    }
+
+    .header .logo h1 {
+        font-size: 24px; /* Уменьшаем заголовок сайта */
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+    
+    button {
+        font-size: 16px; /* Уменьшаем текст на кнопке */
+    }
+}

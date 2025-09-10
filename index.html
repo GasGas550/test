@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грузомир - Грузчики и разнорабочие в Самаре</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo3.png" alt="Логотип Грузомир">
+                <h1>Грузомир</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="container">
+                <h2>Ваш надежный партнер в Самаре</h2>
+                <p>Профессиональные грузчики и разнорабочие для любых задач. Выполняем переезды, погрузку-разгрузку, вывоз мусора и хозяйственные работы. Гарантируем опытную команду, доступные цены и качественный результат!</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2>Наши услуги</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="movers.jpg" alt="Грузчики">
+                        <h3>Грузчики</h3>
+                        <p>Погрузка и разгрузка любых грузов, квартирные и офисные переезды, подъем стройматериалов, доставка мебели и техники.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="workers.jpg" alt="Разнорабочие">
+                        <h3>Разнорабочие</h3>
+                        <p>Помощь на строительных объектах, уборка территории, земельные работы, мелкий демонтаж и другие хозяйственные задачи.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="trash.jpg" alt="Вывоз мусора">
+                        <h3>Вывоз мусора</h3>
+                        <p>Освободим вашу квартиру, дом или участок от строительного и бытового мусора. Работаем быстро и аккуратно.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="other.jpg" alt="Другие услуги">
+                        <h3>Другие услуги</h3>
+                        <p>Нужна помощь в сборке мебели, на складе или в выполнении нестандартных задач? Свяжитесь с нами, и мы найдем решение!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-form-section">
+            <div class="container">
+                <h2>Оставить заявку онлайн</h2>
+                <p>Заполните форму, и мы перезвоним вам для уточнения деталей заказа.</p>
+                <form id="order-form" action="https://formspree.io/f/mvgbldrj" method="POST">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="Имя" required>
+
+                    <label for="phone">Контактный телефон:</label>
+                    <input type="tel" id="phone" name="Телефон" required placeholder="+7 (999) 123-45-67">
+
+                    <label for="address">Адрес выполнения работ:</label>
+                    <input type="text" id="address" name="Адрес" required>
+
+                    <label for="service-type">Какой вид услуг вас интересует?</label>
+                    <select id="service-type" name="Вид услуг">
+                        <option value="Грузчики">Грузчики</option>
+                        <option value="Разнорабочие">Разнорабочие</option>
+                        <option value="Вывоз мусора">Вывоз мусора</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+
+                    <label for="comments">Краткое описание задачи:</label>
+                    <textarea id="comments" name="Комментарий" rows="4"></textarea>
+
+                    <button type="submit">Отправить заявку</button>
+                </form>
+                <p id="status"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h2>Наши контакты</h2>
+            <p><strong>Телефон:</strong> 8 (961) 381-07-77</p>
+            <p><strong>Авито:</strong> (скоро здесь будет ссылка)</p>
+            <p><strong>Социальные сети:</strong> (скоро здесь будут ссылки)</p>
+            <p>© 2025 Грузомир. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
